@@ -1,0 +1,20 @@
+//Fichier CPP pour les fonctions d'acquisition de donnée
+
+#include "acquisition.h"
+
+//Fonction pour init les pins pour les capteurs
+void setupPinsCapteurs()
+{
+    //Init Pins Encodeurs volants
+    pinMode(PIN_ENCODEUR1,INPUT);
+    pinMode(PIN_ENCODEUR2,INPUT);
+
+    //Init Pins Potentiomètre Joystick
+    pinMode(PIN_JOYSTICKX,INPUT);
+    pinMode(PIN_JOYSTICKY,INPUT);
+
+    //Init Pins Accéléromètre (Peut-être à enlever)
+    pinMode(PIN_ACCELEROX,INPUT);
+    pinMode(PIN_ACCELEROY,INPUT);
+    pinMode(PIN_ACCELEROZ,INPUT);
+}
