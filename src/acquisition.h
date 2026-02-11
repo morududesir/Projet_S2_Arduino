@@ -4,7 +4,7 @@
 #define ACQUISITION_H
 
 #include <arduino.h>
-#include <encoder.h>
+#include <Encoder.h>
 
 //Pins Encodeur
 const int PIN_ENCODEUR1 = 21;
