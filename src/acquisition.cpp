@@ -3,15 +3,14 @@
 #include "acquisition.h"
 
 struct Acceleration {
-    int x;
-    int y;
-    int z;
+    float x;
+    float y;
+    float z;
 };
 
 //Fonction pour init les pins pour les capteurs
 void setupPinsCapteurs()
 {
-    setup.wire();
     //Init Pins Encodeurs volants
     pinMode(PIN_ENCODEUR1,INPUT);
     pinMode(PIN_ENCODEUR2,INPUT);
@@ -32,12 +31,13 @@ void setupPinsCapteurs()
     pinMode(SWITCH_4,INPUT);
 }
 
+//Fonction pour lire les accélérations des axes XYZ
 Acceleration capterAccel()
 {
     Acceleration accel;
-    accel.x = digitalRead(PIN_ACCELEROX);
-    accel.y = digitalRead(PIN_ACCELEROY);
-    accel.z = digitalRead(PIN_ACCELEROZ);
+    accel.x = analogRead(PIN_ACCELEROX);
+    accel.y = analogRead(PIN_ACCELEROY);
+    accel.z = analogRead(PIN_ACCELEROZ);
     return accel;
 }
 
