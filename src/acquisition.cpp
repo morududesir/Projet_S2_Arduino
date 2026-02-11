@@ -17,4 +17,11 @@ void setupPinsCapteurs()
     pinMode(PIN_ACCELEROX,INPUT);
     pinMode(PIN_ACCELEROY,INPUT);
     pinMode(PIN_ACCELEROZ,INPUT);
+
+    //Init Pins Switches
+    pinMode(SWITCH_1,INPUT);
+    pinMode(SWITCH_2,INPUT);
+    pinMode(SWITCH_3,INPUT);
+    pinMode(SWITCH_4,INPUT);
 }
+
