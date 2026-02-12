@@ -44,7 +44,7 @@ Encodeur capterEncodeurs() {
     encode.valeurDroite = EncodeurDroite.read();
     return encode;
 }
-    
+
 Joystick capterJoy()
 {
     Joystick joy;
@@ -53,5 +53,4 @@ Joystick capterJoy()
     return joy;
 }
 
-
-
+    
