@@ -13,9 +13,16 @@ struct Acceleration {
     float z;
 };
 
+struct Encodeur {
+    long valeurGauche;
+    long valeurDroite;
+};
+
 //Pins Encodeur
-const int PIN_ENCODEUR1 = 21;
-const int PIN_ENCODEUR2 = 20;
+const int PIN_ENCODEUR1A = 21;
+const int PIN_ENCODEUR1B = 20;
+const int PIN_ENCODEUR2A = 22;
+const int PIN_ENCODEUR2B = 23;
 
 //Pins Joystick
 const int PIN_JOYSTICKX = A3;
@@ -32,10 +39,17 @@ const int SWITCH_2 = 8;
 const int SWITCH_3 = 7;
 const int SWITCH_4 = 6;
 
+//Init encodeurs
+Encoder EncodeurGauche(PIN_ENCODEUR1A,PIN_ENCODEUR1B);
+Encoder EncodeurDroite(PIN_ENCODEUR2A,PIN_ENCODEUR2B);
+
 //Fonction Init Pins
-void setupPinsCapteurs();
+void setupCapteurs();
 
 //Fonction pour capter les valeurs d'accélération XYZ
 Acceleration capterAccel();
+
+//Fonction pour lire les encodeurs
+Encodeur capterEncodeurs();
 
 #endif 

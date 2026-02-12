@@ -22,15 +22,15 @@ int y_speed = 60;
 const char* str = "0";
 char buf[8];
 
-void setup() {
+/*void setup() {
   u8g2.begin();
   u8g2.clearBuffer();
   Serial.begin(9600);
 
 
-}
+}*/
 
-void loop() {
+/*void loop() {
 
   unsigned long currentMillis = millis();
 
@@ -60,4 +60,4 @@ void loop() {
     i++;
     if (i > 119) i = 0;
   }
-}
+}*/

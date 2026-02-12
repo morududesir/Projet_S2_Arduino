@@ -2,18 +2,14 @@
 
 #include "acquisition.h"
 
-struct Acceleration {
-    float x;
-    float y;
-    float z;
-};
-
 //Fonction pour init les pins pour les capteurs
-void setupPinsCapteurs()
+void setupCapteurs()
 {
     //Init Pins Encodeurs volants
-    pinMode(PIN_ENCODEUR1,INPUT);
-    pinMode(PIN_ENCODEUR2,INPUT);
+    pinMode(PIN_ENCODEUR1A,INPUT);
+    pinMode(PIN_ENCODEUR1B,INPUT);
+    pinMode(PIN_ENCODEUR2A,INPUT);
+    pinMode(PIN_ENCODEUR2B,INPUT);
 
     //Init Pins Potentiomètre Joystick
     pinMode(PIN_JOYSTICKX,INPUT);
@@ -41,3 +37,11 @@ Acceleration capterAccel()
     return accel;
 }
 
+Encodeur capterEncodeurs() {
+
+    Encodeur encode;
+    encode.valeurGauche = EncodeurGauche.read();
+    encode.valeurDroite = EncodeurDroite.read();
+    return encode;
+}
+    
