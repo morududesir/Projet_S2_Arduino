@@ -2,11 +2,7 @@
 
 #include "acquisition.h"
 
-struct Acceleration {
-    float x;
-    float y;
-    float z;
-};
+
 
 //Fonction pour init les pins pour les capteurs
 void setupPinsCapteurs()
@@ -40,4 +36,14 @@ Acceleration capterAccel()
     accel.z = analogRead(PIN_ACCELEROZ);
     return accel;
 }
+
+Joystick capterJoy()
+{
+    Joystick joy;
+    joy.x = analogRead(PIN_JOYSTICKX);
+    joy.y = analogRead(PIN_JOYSTICKY);
+    return joy;
+}
+
+
 

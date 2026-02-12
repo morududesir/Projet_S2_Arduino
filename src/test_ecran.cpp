@@ -1,6 +1,8 @@
+
+
 #include <U8g2lib.h>
 
-// SW SPI: (rotation, clock, data, cs, dc, reset)
+ //SW SPI: (rotation, clock, data, cs, dc, reset)
 U8G2_SSD1309_128X64_NONAME0_F_4W_SW_SPI u8g2(
   U8G2_R0,
   /* clock=*/ 13,
@@ -8,7 +10,8 @@ U8G2_SSD1309_128X64_NONAME0_F_4W_SW_SPI u8g2(
   /* cs=*/ 10,
   /* dc=*/ 9,
   /* reset=*/ 8
-);
+); 
+
 
 int i = 0;
 
@@ -40,13 +43,12 @@ void loop() {
     itoa(i, buf, 10);
 
     u8g2.clearBuffer();
-       u8g2.setFont(u8g2_font_logisoso32_tn);
+    u8g2.setFont(u8g2_font_logisoso32_tn);
     int w = u8g2.getStrWidth(buf);
     int x_speed = (128 - w) / 2;
-    Serial.println(x_speed);
 
     int x_right = x_speed + w;
-    int x_unit = x_right + 10;
+    int x_unit = x_right + 5;
 
  
     u8g2.drawStr(x_speed, 60, buf);

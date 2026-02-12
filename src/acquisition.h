@@ -13,14 +13,20 @@ struct Acceleration {
     float z;
 };
 
+//Structure pour les valeurs de joysticks
+struct Joystick {
+    float x;
+    float y;
+};
+
 
 //Pins Encodeur
 const int PIN_ENCODEUR1 = 21;
 const int PIN_ENCODEUR2 = 20;
 
 //Pins Joystick
-const int PIN_JOYSTICKX = 0;
-const int PIN_JOYSTICKY = 0;
+const int PIN_JOYSTICKX = A3;
+const int PIN_JOYSTICKY = A4;
 
 //Pins Accéléromètre
 const int PIN_ACCELEROX = A0;
@@ -38,5 +44,8 @@ void setupPinsCapteurs();
 
 //Fonction pour capter les valeurs d'accélération XYZ
 Acceleration capterAccel();
+
+//Fonction pour acquisitionner les valeurs de joysticks
+Joystick capterJoy();
 
 #endif 
