@@ -6,6 +6,14 @@
 #include <arduino.h>
 #include <Encoder.h>
 
+//Structure pour les valeurs de retour d'accélération
+struct Acceleration {
+    float x;
+    float y;
+    float z;
+};
+
+
 //Pins Encodeur
 const int PIN_ENCODEUR1 = 21;
 const int PIN_ENCODEUR2 = 20;
@@ -27,5 +35,8 @@ const int SWITCH_4 = 6;
 
 //Fonction Init Pins
 void setupPinsCapteurs();
+
+//Fonction pour capter les valeurs d'accélération XYZ
+Acceleration capterAccel();
 
 #endif 
