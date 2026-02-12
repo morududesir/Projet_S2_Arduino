@@ -1,5 +1,5 @@
 
-#include "acquisition_base.h"
+#include "arduino_base.h"
 
 //Init Objet Encodeur
 Encoder E_BASE(PIN_ENCODEURBASE1,PIN_ENCODEURBASE2);
