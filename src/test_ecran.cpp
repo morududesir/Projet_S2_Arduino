@@ -1,15 +1,15 @@
 
-
+/*
 #include <U8g2lib.h>
 
  //SW SPI: (rotation, clock, data, cs, dc, reset)
 U8G2_SSD1309_128X64_NONAME0_F_4W_SW_SPI u8g2(
   U8G2_R0,
-  /* clock=*/ 13,
-  /* data=*/ 11,
-  /* cs=*/ 10,
-  /* dc=*/ 9,
-  /* reset=*/ 8
+  13,   //clock
+  11,   //data 
+  10,   //cs
+  9,   //dc
+  8   //reset
 ); 
 
 
@@ -25,15 +25,17 @@ int y_speed = 60;
 const char* str = "0";
 char buf[8];
 
-/*void setup() {
+void setup() {
   u8g2.begin();
   u8g2.clearBuffer();
   Serial.begin(9600);
+}
 
 
 }*/
 
 /* void loop() {
+void loop() {
 
   unsigned long currentMillis = millis();
 
