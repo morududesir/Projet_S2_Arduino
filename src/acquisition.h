@@ -18,6 +18,13 @@ struct Encodeur {
     long valeurDroite;
 };
 
+//Structure pour les valeurs de joysticks
+struct Joystick {
+    float x;
+    float y;
+};
+
+
 //Pins Encodeur
 const int PIN_ENCODEUR1A = 21;
 const int PIN_ENCODEUR1B = 20;
@@ -51,5 +58,8 @@ Acceleration capterAccel();
 
 //Fonction pour lire les encodeurs
 Encodeur capterEncodeurs();
+
+//Fonction pour acquisitionner les valeurs de joysticks
+Joystick capterJoy();
 
 #endif 

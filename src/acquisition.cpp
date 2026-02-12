@@ -45,3 +45,13 @@ Encodeur capterEncodeurs() {
     return encode;
 }
     
+Joystick capterJoy()
+{
+    Joystick joy;
+    joy.x = analogRead(PIN_JOYSTICKX);
+    joy.y = analogRead(PIN_JOYSTICKY);
+    return joy;
+}
+
+
+
