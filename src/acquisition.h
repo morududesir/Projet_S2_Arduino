@@ -46,10 +46,6 @@ const int SWITCH_2 = 8;
 const int SWITCH_3 = 7;
 const int SWITCH_4 = 6;
 
-//Init encodeurs
-Encoder EncodeurGauche(PIN_ENCODEUR1A,PIN_ENCODEUR1B);
-Encoder EncodeurDroite(PIN_ENCODEUR2A,PIN_ENCODEUR2B);
-
 //Fonction Init Pins
 void setupCapteurs();
 

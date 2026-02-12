@@ -1,6 +1,7 @@
 
 
 #include <Arduino.h>
+#include "acquisition.h"
 #include "traitement.h"
 
 
