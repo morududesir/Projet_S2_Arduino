@@ -16,8 +16,8 @@ uint8_t traitementJoystick() {
 
 }
 
-
-float traitement_acceleration()
+//Fonction qui prend les valeurs d'accélération en tension et retourne un struct contenant les valeurs d'accélération en g et la direction que la manette tourne
+DirectionAccel traitement_acceleration()
 {
     //Initialisation variables
     float ratio_V_en_G = 0.3;
@@ -25,22 +25,27 @@ float traitement_acceleration()
     float XYZ[3] = {acc_en_g.x,acc_en_g.y,acc_en_g.z}; //Extraction valeurs accel XYZ
     float XYZ_en_g[3];
     int i;
-    Direction direction;
+    DirectionAccel valAccel;
 
     //Conversion V en g
     for(i=0;i<sizeof(XYZ);i++){
         if(XYZ[i]<1.45 && XYZ[i]>1.65){
             XYZ_en_g[i] = (XYZ[i]-V_0g)/ratio_V_en_G;
+            valAccel.valeursAccel[i] = XYZ_en_g[i];
         }
         else{
-            XYZ[i] = 0.0;
+            XYZ_en_g[i] = 0.0;
+            valAccel.valeursAccel[i] = XYZ_en_g[i];
         }
     }
 
     //Détection direction accelération
-    if(XYZ[0]>0 && XYZ[1)
+    if(XYZ_en_g[0]<0){
+        valAccel.direction = GAUCHE;
+    }
+    else if(XYZ_en_g[0]){
+        valAccel.direction = DROITE;
+    }
 
-
-
-
+    return valAccel;
 }
