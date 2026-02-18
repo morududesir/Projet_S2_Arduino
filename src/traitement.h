@@ -5,13 +5,20 @@
 
 #include "acquisition.h"
 
-uint8_t traitementJoystick();
+enum Direction {NEUTRE = 0, GAUCHE = 1, DROITE = 2};
 
 const int joy_deadzone = 50;
 const int joy_mid = 512;
 
-const float V_0g = 1.5; //Min 0g
+const float V_0g = 1.5; // 0g +/- 0.15V
 
-const float ratio_V_en_g = (1.95/1)
+uint8_t traitementJoystick();
+
+
+struct DirectionAccel {
+    float valeursAccel[3];
+    Direction direction;
+    
+};
 
 #endif

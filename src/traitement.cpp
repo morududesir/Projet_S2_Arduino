@@ -28,8 +28,8 @@ DirectionAccel traitement_acceleration()
     DirectionAccel valAccel;
 
     //Conversion V en g
-    for(i=0;i<sizeof(XYZ);i++){
-        if(XYZ[i]<1.45 && XYZ[i]>1.65){
+    for(i=0;i<3;i++){
+        if(XYZ[i]<1.45 || XYZ[i]>1.65){
             XYZ_en_g[i] = (XYZ[i]-V_0g)/ratio_V_en_G;
             valAccel.valeursAccel[i] = XYZ_en_g[i];
         }
@@ -43,8 +43,11 @@ DirectionAccel traitement_acceleration()
     if(XYZ_en_g[0]<0){
         valAccel.direction = GAUCHE;
     }
-    else if(XYZ_en_g[0]){
+    else if(XYZ_en_g[0]>0){
         valAccel.direction = DROITE;
+    }
+    else {
+        valAccel.direction = NEUTRE;
     }
 
     return valAccel;
