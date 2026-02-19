@@ -16,7 +16,7 @@ uint8_t traitementJoystick() {
 
 }
 
-//Fonction qui prend les valeurs d'accélération en tension et retourne un struct contenant les valeurs d'accélération en g et la direction que la manette tourne
+//Fonction qui prend les valeurs d'accélération en tension et retourne un struct contenant les valeurs d'accélération en g et la direction que la manette tourne en valeur numérique
 DirectionAccel traitement_acceleration()
 {
     //Initialisation variables

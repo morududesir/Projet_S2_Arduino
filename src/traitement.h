@@ -5,6 +5,7 @@
 
 #include "acquisition.h"
 
+//enum pour la direction du volant
 enum Direction {NEUTRE = 0, GAUCHE = 1, DROITE = 2};
 
 const int joy_deadzone = 50;
@@ -18,7 +19,6 @@ uint8_t traitementJoystick();
 struct DirectionAccel {
     float valeursAccel[3];
     Direction direction;
-    
 };
 
 #endif
