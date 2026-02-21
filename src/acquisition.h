@@ -24,6 +24,13 @@ struct Joystick {
     float y;
 };
 
+struct Bouton {
+    bool switch1;
+    bool switch2;
+    bool switch3;
+    bool switch4;
+};
+
 
 //Pins Encodeur
 const int PIN_ENCODEUR1A = 21;
@@ -57,5 +64,7 @@ Encodeur capterEncodeurs();
 
 //Fonction pour acquisitionner les valeurs de joysticks
 Joystick capterJoy();
+
+Bouton capterSwitch();
 
 #endif 

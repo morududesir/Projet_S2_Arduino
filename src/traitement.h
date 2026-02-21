@@ -12,13 +12,16 @@ const int joy_mid = 512;
 
 const float V_0g = 1.5; // 0g +/- 0.15V
 
-uint8_t traitementJoystick();
-
-
 struct DirectionAccel {
     float valeursAccel[3];
     Direction direction;
     
 };
+
+uint8_t traitementJoystick();
+DirectionAccel traitement_acceleration();
+
+
+
 
 #endif

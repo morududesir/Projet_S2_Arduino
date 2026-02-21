@@ -1,4 +1,5 @@
 #include "traitement.h"
+#include <math.h>  // for fabsf
 
 uint8_t traitementJoystick() {
     Joystick val = capterJoy();
@@ -16,7 +17,8 @@ uint8_t traitementJoystick() {
 
 }
 
-//Fonction qui prend les valeurs d'accélération en tension et retourne un struct contenant les valeurs d'accélération en g et la direction que la manette tourne
+//Fonction qui prend les valeurs d'accélération en tension et retourne un struct contenant
+//les valeurs d'accélération en g et la direction que la manette tourne
 DirectionAccel traitement_acceleration()
 {
     //Initialisation variables

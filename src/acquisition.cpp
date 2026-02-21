@@ -24,19 +24,19 @@ void setupCapteurs()
     pinMode(PIN_ACCELEROZ,INPUT);
 
     //Init Pins Switches
-    pinMode(SWITCH_1,INPUT);
-    pinMode(SWITCH_2,INPUT);
-    pinMode(SWITCH_3,INPUT);
-    pinMode(SWITCH_4,INPUT);
+    pinMode(SWITCH_1,INPUT_PULLUP);
+    pinMode(SWITCH_2,INPUT_PULLUP);
+    pinMode(SWITCH_3,INPUT_PULLUP);
+    pinMode(SWITCH_4,INPUT_PULLUP);
 }
 
 //Fonction pour lire les accélérations des axes XYZ
 Acceleration capterAccel()
 {
     Acceleration accel;
-    accel.x = analogRead(PIN_ACCELEROX);
-    accel.y = analogRead(PIN_ACCELEROY);
-    accel.z = analogRead(PIN_ACCELEROZ);
+    accel.x = analogRead(PIN_ACCELEROX) * 5 / 1023.0;
+    accel.y = analogRead(PIN_ACCELEROY) * 5 / 1023.0;
+    accel.z = analogRead(PIN_ACCELEROZ) * 5 / 1023.0;
     return accel;
 }
 
@@ -54,6 +54,16 @@ Joystick capterJoy()
     joy.x = analogRead(PIN_JOYSTICKX);
     joy.y = analogRead(PIN_JOYSTICKY);
     return joy;
+}
+
+Bouton capterSwitch()
+{
+    Bouton bouton;
+    bouton.switch1 = !(digitalRead(SWITCH_1));
+    bouton.switch2 = !(digitalRead(SWITCH_2));
+    bouton.switch3 = !(digitalRead(SWITCH_3));
+    bouton.switch4 = !(digitalRead(SWITCH_4));
+    return bouton;
 }
 
     
